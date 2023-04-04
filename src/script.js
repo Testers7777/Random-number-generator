@@ -6,12 +6,10 @@ function random(min, max) {
 
 const a = document.getElementById('testation');
 a.addEventListener("click", () => {
-    const c = document.getElementById('lenghtmin').value;
-    const d = document.getElementById('lenghtmax').value;
-    if (c != '' && d != '') {
-    const b = document.getElementById('text');
-    b.innerHTML = 'Votre mot de passe est : ' + random(c, d)
-    b.setAttribute('class', 'flex')
+    const documents = {'min': document.getElementById('lenghtmin').value,'max': document.getElementById('lenghtmax').value, 'text': document.getElementById('text')}
+    if (documents['min'] != '' && documents['max'] != '') {
+    documents['text'].innerHTML = 'Votre mot de passe est : ' + random(documents['min'], documents['max'])
+    documents['text'].setAttribute('class', 'flex')
     } else {
         alert('Veuillez transmettre toutes les informations demandées')
     }
